@@ -1,0 +1,19 @@
+        <div class="{% if builder.filterColumns|length == 0 %} span12 {% else %} span9 {% endif %}">
+
+            {{ block('list_scopes') -}}
+
+            {{- block('list_nbresults') -}}
+
+            <table id="list_table" class="table table-striped table-hover table-condensed">
+                {{ block('list_thead') -}}
+                {{- block('list_tbody') }}
+            </table>
+
+            <div id="list_toolbar" class="form-actions">
+                <div class="btn-toolbar pull-left">
+                  {{ block('list_batch_actions') }}
+                  {{ block('list_actions') }}
+                </div>
+                {{- block('list_paginator') -}}
+            </div>
+        </div>
